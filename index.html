@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+
+        <meta name="keywords" content="поиск книг, поиск книги, найти книгу, книжка, все книги, книга, книги, поиск, купить дешевле, цен, цена, сравнение цен, каталог, book, books, find, search, e-shopping, книги, магазин, литература, книжный магазин, интернет-магазин, торговля, книготорговля, электронная торговля, библиотека, электронная коммерция, издательство">
+        <meta name="description" content="специализированная система для поиска и сравнения книг, продающихся в российских интернет-магазинах. вы приходите к нам, находите и покупаете книги во всех ведущих российских интернет-магазинах, не тратя время на поиск и сравнение цен.">
+
+        <title>FindBook.ru - Поиск книг в российских Интернет-магазинах</title>
+
+        <link rel="stylesheet" href="css/index.css" />
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <!--Preloader-->
+        <!--for showing preloader remove style="display: none;"-->
+        <div class="page-loader" style="display: none;"></div>
+        <!--Preloader - end-->
+
+        <!--Header, nav-->
+        <header class="header">
+            <div class="container row">
+                <div class="col-5 header__title">
+                    <a href="/" class="header__logo">FindBook</a>
+                    <span class="header__text">Поиск лучших цен на<br /> книги и не только...</span>
+                </div>
+                <nav class="col-7 top-nav">
+                    <a href="/search/d0" class="top-nav__link top-nav__link--active">Поиск</a>
+                    <a href="/search/d1?page=Discounts" class="top-nav__link">Все акции</a>
+                    <a href="/search/d1?page=History" class="top-nav__link">Прямой эфир</a>
+                    <a href="/search/d1?page=Rating" class="top-nav__link">Статистика</a>
+                    <a href="/search/d1?page=SearchHowTo" class="top-nav__link">Помощь</a>
+                    <a href="" class="top-nav__link-icon--heart">
+                        <span class="top-nav__likes">8</span>
+                        <i class="icon-heart"></i>
+                    </a>
+                    <a href="#leftNav" class="top-nav__link-icon">
+                        <i class="icon-menu"></i>
+                    </a>
+                </nav>
+            </div>
+            <aside id="leftNav" class="left-nav">
+                <button id="leftNavClose" type="button" class="left-nav__close">Скрыть меню</button>
+                <nav class="col-7 left-nav__nav">
+                    <a href="/" class="left-nav__link left-nav__link--active">Главная — Поиск</a>
+                    <a href="/" class="left-nav__link">Избранное</a>
+                    <a href="/search/d1?page=Discounts" class="left-nav__link">Все акции</a>
+                    <a href="/search/d1?page=History" class="left-nav__link">Прямой эфир</a>
+                    <a href="/search/d1?page=Rating" class="left-nav__link">Статистика</a>
+                    <a href="/search/d1?page=SearchHowTo" class="left-nav__link">Помощь</a>
+                    <a href="/" class="left-nav__link">О проекте</a>
+                    <a href="/" class="left-nav__link">Соглашение пользователя</a>
+                    <a href="mailto:kl@findbook.ru" class="left-nav__link">Написать нам</a>
+                </nav>
+                <div id="leftNavDate" class="left-nav__date">20 апреля 2022, 18:02</div>
+            </aside>
+        </header>
+        <!--Header, nav - end-->
+
+        <!--Search form-->
+        <form name="fQuery" action="/search/d1" method="GET" class="book-search-form">
+            <div class="container">
+                <!--small search form-->
+                <div class="row book-search-form__row">
+                    <!--remove class .book-search-form__expanded-button--active to make  button gray-->
+                    <button type="button" class="book-search-form__expanded-button" aria-label="Расширенный поиск">
+                        <i class="icon-sliders"></i>
+                    </button>
+                    <div class="book-search-form__field-list">
+                        <div class="book-search-form__search-line">
+                            <div class="book-search-form__fieldset">
+                                <input type="text" name="title" value="" size="18" maxlength="50" class="book-search-form__title" placeholder="Название книги" />
+                                <input type="text" name="authors" value="" size="18" maxlength="50" class="book-search-form__author" placeholder="Автор" />
+                                <!--in more 1 lines for search, remove book-search-form__isbn--last class-->
+                                <input type="text" name="isbn" value="" size="18" maxlength="18" class="book-search-form__isbn book-search-form__isbn--last" placeholder="ISBN" />
+                            </div>
+                            <button type="button" class="book-search-form__add-button" aria-label="Добавить поле">
+                                <i class="icon-plus-circle"></i>
+                            </button>
+                        </div>
+                        <!--second line-->
+                        <!--div class="book-search-form__search-line">
+                            <div class="book-search-form__fieldset">
+                                <input type="text" name="title" value="" size="18" maxlength="50" class="book-search-form__title" placeholder="Название книги" />
+                                <input type="text" name="authors" value="" size="18" maxlength="50" class="book-search-form__author" placeholder="Автор" />
+                                <input type="text" name="isbn" value="" size="18" maxlength="18" class="book-search-form__isbn book-search-form__isbn--last" placeholder="ISBN" />
+                            </div>
+                            <button type="button" class="book-search-form__remove-button" aria-label="Убрать поле">
+                                <i class="icon-minus-circle"></i>
+                            </button>
+                        </div-->
+                        <!--second line - end-->
+                        <!--to show text, remove .book-search-form__submit-button--icon class
+                            change on last input.book-search-form__isbn class .book-search-form__isbn--last on .book-search-form__isbn--extended to add padding for search button
+                        -->
+                        <button type="submit" class="book-search-form__submit-button book-search-form__submit-button--icon" aria-label="Найти">Найти</button>
+                    </div>
+                </div>
+                <!--to show block, add class .book-search-form__extended-links--extended-->
+                <div class="row book-search-form__extended-links">
+                    <a href="#extendedForm" class="book-search-form__link">Расширенный поиск</a>
+                    <button type="button" class="book-search-form__link">Добавить поле</button>
+                </div>
+                <!--small search form - end-->
+            </div>
+        </form>
+        <!--Search form - end-->
+
+        <!--Banners-->
+        <section class="container banners banners--content">
+            <div class="row banners__row">
+                <a href="/" class="row col-6 banners__banner banners__banner--text banners__banner--yellow">
+                    <span class="banners__logo">
+                        <img src="images/content/chitay-gorod-logo.png" style="width: 120px;" alt="Читай-город" />
+                    </span>
+                    <span class="banners__text banners__text--center">Отмечаем день книги<br /> -20% на все книги<br /> с 22 по 24 апреля</span>
+                    <span class="banners__text--big">20%</span>
+                </a>
+                <div href="/" class="row col-6 banners__banner banners__banner--text banners__banner--yellow">
+                    <span class="banners__logo">
+                        <img src="images/content/chitay-gorod-logo.png" style="width: 120px;" alt="Читай-город" />
+                    </span>
+                    <span class="banners__text banners__text--center">Отмечаем день книги<br /> -20% на все книги<br /> с 22 по 24 апреля</span>
+                    <a href="/" class="banners__text--big">20%</a>
+                </div>
+            </div>
+
+            <div class="row banners__row">
+                <a href="/" class="row col-6 banners__banner banners__banner--image">
+                    <img src="images/content/chitay-gorod-banner.png" alt="Читай-город" />
+                </a>
+                <div href="/" class="row col-6 banners__banner banners__banner--text banners__banner--yellow">
+                    <span class="banners__logo">
+                        <img src="images/content/chitay-gorod-logo.png" style="width: 120px;" alt="Читай-город" />
+                    </span>
+                    <a href="/" class="banners__text banners__text--center">Отмечаем день книги<br /> -20% на все книги<br /> с 22 по 24 апреля</a>
+                    <span class="banners__text--big">20%</span>
+                </div>
+            </div>
+
+            <div class="row banners__row">
+                <a href="/" class="row col-6 banners__banner banners__banner--text banners__banner--yellow">
+                    <span class="banners__logo">
+                        <img src="images/content/chitay-gorod-logo.png" style="width: 120px;" alt="Читай-город" />
+                    </span>
+                    <span class="banners__text banners__text--center">Отмечаем день книги<br /> -20% на все книги<br /> с 22 по 24 апреля</span>
+                    <span class="banners__text--big">20%</span>
+                </a>
+                <div href="/" class="row col-6 banners__banner banners__banner--text banners__banner--yellow">
+                    <span class="banners__logo">
+                        <img src="images/content/chitay-gorod-logo.png" style="width: 120px;" alt="Читай-город" />
+                    </span>
+                    <span class="banners__text banners__text--center">Отмечаем день книги<br /> -20% на все книги<br /> с 22 по 24 апреля</span>
+                    <a href="/" class="banners__text--big">20%</a>
+                </div>
+            </div>
+
+            <div class="row banners__row">
+                <a href="/" class="row col-6 banners__banner">
+                    <img src="images/content/chitay-gorod-banner.png" alt="Читай-город" />
+                </a>
+                <div href="/" class="row col-6 banners__banner banners__banner--text banners__banner--yellow">
+                    <span class="banners__logo">
+                        <img src="images/content/chitay-gorod-logo.png" style="width: 120px;" alt="Читай-город" />
+                    </span>
+                    <a href="/" class="banners__text banners__text--center">Отмечаем день книги<br /> -20% на все книги<br /> с 22 по 24 апреля</a>
+                    <span class="banners__text--big">20%</span>
+                </div>
+            </div>
+        </section>
+        <!--Banners -end -->
+
+        <div class="container">
+            <a href="/search/d0?page=Discounts" class="button button--gray button--lg button--actions">Все акции</a>
+        </div>
+
+        <!--Footer-->
+        <footer class="footer">
+            <div class="container row footer__row">
+                <div class="footer__copyright">@ 2000 — 2022, FINDBOOK.RU</div>
+                <div class="footer__text">
+                    <a href="/" class="footer__link">О проекте</a>
+                    <a href="/" class="footer__link">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/menu.js"></script>
+    </body>
+</html>

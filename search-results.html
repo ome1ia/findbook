@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+
+        <meta name="keywords" content="поиск книг, поиск книги, найти книгу, книжка, все книги, книга, книги, поиск, купить дешевле, цен, цена, сравнение цен, каталог, book, books, find, search, e-shopping, книги, магазин, литература, книжный магазин, интернет-магазин, торговля, книготорговля, электронная торговля, библиотека, электронная коммерция, издательство">
+        <meta name="description" content="специализированная система для поиска и сравнения книг, продающихся в российских интернет-магазинах. вы приходите к нам, находите и покупаете книги во всех ведущих российских интернет-магазинах, не тратя время на поиск и сравнение цен.">
+
+        <title>FindBook.ru - Поиск книг в российских Интернет-магазинах</title>
+
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/toastnotify.css" />
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <!--Preloader-->
+        <!--for showing preloader remove style="display: none;"-->
+        <div class="page-loader" style="display: none;"></div>
+        <!--Preloader - end-->
+
+        <!--Header, nav-->
+        <header class="header">
+            <div class="container row">
+                <div class="col-5 header__title">
+                    <a href="/" class="header__logo">FindBook</a>
+                    <span class="header__text">Поиск лучших цен на<br /> книги и не только...</span>
+                </div>
+                <nav class="col-7 top-nav">
+                    <a href="/search/d0" class="top-nav__link top-nav__link--active">Поиск</a>
+                    <a href="/search/d1?page=Discounts" class="top-nav__link">Все акции</a>
+                    <a href="/search/d1?page=History" class="top-nav__link">Прямой эфир</a>
+                    <a href="/search/d1?page=Rating" class="top-nav__link">Статистика</a>
+                    <a href="/search/d1?page=SearchHowTo" class="top-nav__link">Помощь</a>
+                    <a href="" class="top-nav__link-icon--heart">
+                        <span class="top-nav__likes">8</span>
+                        <i class="icon-heart"></i>
+                    </a>
+                    <a href="#leftNav" class="top-nav__link-icon">
+                        <i class="icon-menu"></i>
+                    </a>
+                </nav>
+            </div>
+            <aside id="leftNav" class="left-nav">
+                <button id="leftNavClose" type="button" class="left-nav__close">Скрыть меню</button>
+                <nav class="col-7 left-nav__nav">
+                    <a href="/" class="left-nav__link left-nav__link--active">Главная — Поиск</a>
+                    <a href="/" class="left-nav__link">Избранное</a>
+                    <a href="/search/d1?page=Discounts" class="left-nav__link">Все акции</a>
+                    <a href="/search/d1?page=History" class="left-nav__link">Прямой эфир</a>
+                    <a href="/search/d1?page=Rating" class="left-nav__link">Статистика</a>
+                    <a href="/search/d1?page=SearchHowTo" class="left-nav__link">Помощь</a>
+                    <a href="/" class="left-nav__link">О проекте</a>
+                    <a href="/" class="left-nav__link">Соглашение пользователя</a>
+                    <a href="mailto:kl@findbook.ru" class="left-nav__link">Написать нам</a>
+                </nav>
+                <div id="leftNavDate" class="left-nav__date">20 апреля 2022, 18:02</div>
+            </aside>
+        </header>
+        <!--Header, nav - end-->
+
+        <!--Search form-->
+        <form name="fQuery" action="/search/d1" method="GET" class="book-search-form">
+            <div class="container">
+                <!--small search form-->
+                <div class="row book-search-form__row">
+                    <button type="button" class="book-search-form__expanded-button" aria-label="Расширенный поиск">
+                        <i class="icon-sliders"></i>
+                    </button>
+                    <div class="book-search-form__field-list">
+                        <div class="book-search-form__search-line">
+                            <div class="book-search-form__fieldset">
+                                <input type="text" name="title" value="" size="18" maxlength="50" class="book-search-form__title" placeholder="Название книги" />
+                                <input type="text" name="authors" value="" size="18" maxlength="50" class="book-search-form__author" placeholder="Автор" />
+                                <input type="text" name="isbn" value="" size="18" maxlength="18" class="book-search-form__isbn book-search-form__isbn--last" placeholder="ISBN" />
+                            </div>
+                            <button type="button" class="book-search-form__add-button" aria-label="Добавить поле">
+                                <i class="icon-plus-circle"></i>
+                            </button>
+                        </div>
+                        <button type="submit" class="book-search-form__submit-button book-search-form__submit-button--icon" aria-label="Найти">Найти</button>
+                    </div>
+                </div>
+                <!--to show block, add class .book-search-form__extended-links--extended-->
+                <div class="row book-search-form__extended-links">
+                    <a href="#extendedForm" class="book-search-form__link">Расширенный поиск</a>
+                    <button type="button" class="book-search-form__link">Добавить поле</button>
+                </div>
+                <!--small search form - end-->
+            </div>
+        </form>
+        <!--Search form - end-->
+
+        <!--Search summary-->
+        <aside class="container search-summary row row--left">
+            <div class="search-summary__text">Найдено книг: <span class="search-summary__mark">208</span> по цене <b class="search-summary__mark search-summary__mark--bold">от 0₽ до 2050₽</b></div>
+            <div class="search-summary__links">
+                <a href="#" class="button buttom--md button--gray search-summary__button" aria-label="Сохранить поиск" title="Сохранить поиск">
+                    <i class="icon-bookmark"></i>
+                </a>
+                <a href="#hints" class="button buttom--md button--yellow search-summary__button" aria-label="Как улучшить результаты поиска" title="Как улучшить результаты поиска">
+                    <i class="icon-bolt"></i>
+                </a>
+            </div>
+        </aside>
+
+        <!--Pagination-->
+        <aside class="container row pagination">
+            <div class="pagination__pages">
+                <a href="/" class="button buttom--md button--gray pagination__page">
+                    <i class="icon-angle-double-left"></i>
+                </a>
+                <a href="/" class="button buttom--md button--gray pagination__page">
+                    <i class="icon-angle-left"></i>
+                </a>
+                <b class="button buttom--md button--blue pagination__page pagination__page--active">1</b>
+                <a href="/search/d1?title=&r=0&s=0&s5=1&s30=1&s38=1&s27=1&viewsize=15&startidx=15" class="button buttom--md button--gray pagination__page">2</a>
+                <a href="/search/d1?title=&r=0&s=0&s5=1&s30=1&s38=1&s27=1&viewsize=15&startidx=30" class="button buttom--md button--gray pagination__page">3</a>
+                <a href="/search/d1?title=&r=0&s=0&s5=1&s30=1&s38=1&s27=1&viewsize=15&startidx=45" class="button buttom--md button--gray pagination__page">4</a>
+                <a href="" class="button buttom--md pagination__page pagination__page--dots">...</a>
+                <a href="/search/d1?title=&r=0&s=0&s5=1&s30=1&s38=1&s27=1&viewsize=15&startidx=60" class="button buttom--md button--gray pagination__page">5</a>
+                <a href="/search/d1?title=&r=0&s=0&s5=1&s30=1&s38=1&s27=1&viewsize=15&startidx=15" class="button buttom--md button--gray pagination__page">600</a>
+                <a href="/" class="button buttom--md button--gray pagination__page">
+                    <i class="icon-angle-right"></i>
+                </a>
+                <a href="/" class="button buttom--md button--gray pagination__page">
+                    <i class="icon-angle-double-right"></i>
+                </a>
+                <a href="/" class="button buttom--md button--gray pagination__page pagination__page--all">Одной страницей</a>
+            </div>
+            <div class="pagination__sort">
+                <div class="select">
+                    <select name="" class="select__select">
+                        <option value="1">Сортировка по: релевантности</option>
+                        <option value="2">Сортировка по: цене</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+        <!--Pagination - end-->
+
+        <!--Results-->
+        <section class="container results">
+            <!--book#1-->
+            <div class="results__book">
+                <h4 class="results__title"><b class="results__title-name">Дюна Мессия Дюны Дети Дюны</b> — Фрэнк Герберт</h4>
+                <div class="row results__line">
+                    <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener" class="results__image">
+                        <img src="https://rusbuk.ru/uploads/books/936151/66b49319d2fc5b13397ec705221188a8b8c4254fMid.jpg?1" alt="Русбук" width="60" height="84" border="0">
+                    </a>
+                    <div class="results__shop">
+                        <div class="results__shop-name">Чакона</div>
+                    </div>
+                    <div class="results__book-name">
+                        <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener">Фрэнк Г. Дюна: Дюна. Мессия Дюны. Дети Дюны. (Герберт, Фрэнк, 2020)</a>
+                    </div>
+                    <div class="results__price-block">
+                        <div class="results__price">820₽</div>
+                    </div>
+                </div>
+
+                <div class="row results__line">
+                    <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener" class="results__image">
+                        <img src="https://rusbuk.ru/uploads/books/936151/66b49319d2fc5b13397ec705221188a8b8c4254fMid.jpg?1" alt="Русбук" width="60" height="84" border="0">
+                    </a>
+                    <div class="results__shop">
+                        <div class="results__shop-name">Чакона</div>
+                        <div class="results__publishing">Новое издательство</div>
+                        <div class="results__isbn">ISBN: <a href="/search/d1?isbn=5237030777&amp;r=0&amp;s=0&amp;s5=1&amp;s30=1&amp;s38=1&amp;s27=1&amp;viewsize=15&amp;startidx=">5237030777</a></div>
+                    </div>
+                    <div class="results__book-name">
+                        <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener">Фрэнк Г. Дюна: Дюна. Мессия Дюны. Дети Дюны. (Герберт, Фрэнк, 2020)</a>
+                    </div>
+                    <div class="results__actions">
+                        <div onclick="show_snackbar('79f46cff-6d53-11ed-ab90-525400e1d4b1')" class="results__promocode">-20% для авторизованных пользователей</div>
+                        <div onclick="show_snackbar('79f46cff-6d53-11ed-ab90-525400e1d4b1')" class="results__promocode">-20% при заказе от 1500р. и доставке с Почтой России</div>
+                    </div>
+                    <div class="results__price-block">
+                        <div class="results__price">820₽</div>
+                        <div onclick="show_snackbar('831eea98-6d53-11ed-ab90-525400e1d4b1')" class="results__price results__price--action">
+                            650₽<br />
+                            <small>по акции</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row results__line results__line--ebook">
+                    <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener" class="results__image">
+                        <img src="https://rusbuk.ru/uploads/books/936151/66b49319d2fc5b13397ec705221188a8b8c4254fMid.jpg?1" alt="Русбук" width="60" height="84" border="0">
+                    </a>
+                    <div class="results__shop">
+                        <div class="results__shop-name">Чакона</div>
+                        <div class="results__publishing">Новое издательство</div>
+                        <div class="results__isbn">ISBN: <a href="/search/d1?isbn=5237030777&amp;r=0&amp;s=0&amp;s5=1&amp;s30=1&amp;s38=1&amp;s27=1&amp;viewsize=15&amp;startidx=">5237030777</a></div>
+                    </div>
+                    <div class="results__book-name">
+                        <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener">Фрэнк Г. Дюна: Дюна. Мессия Дюны. Дети Дюны. (Герберт, Фрэнк, 2020)</a>
+                    </div>
+                    <div class="results__actions">
+                        <div onclick="show_snackbar('79f46cff-6d53-11ed-ab90-525400e1d4b1')" class="results__actions-text">Электронная книга</div>
+                        <div onclick="window.open('https://www.litres.ru/pages/quickread/?art=55339991&amp;skin=normal&amp;lfrom=913638706&amp;l=913638706&amp;widget=1.00&amp;iframe=1', '_blank','noopener,noreferrer').focus();" class="results__actions-link">Читать отрывок</div>
+                        
+                    </div>
+                    <div class="results__price-block">
+                        <div class="results__price">820₽</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--book#2-->
+            <div class="results__book">
+                <h4 class="results__title"><b>Дюна Мессия Дюны Дети Дюны</b> — Фрэнк Герберт</h4>
+                <div class="row results__line">
+                    <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener" class="results__image">
+                        <img src="https://rusbuk.ru/uploads/books/936151/66b49319d2fc5b13397ec705221188a8b8c4254fMid.jpg?1" alt="Русбук" width="60" height="84" border="0">
+                    </a>
+                    <div class="results__shop">
+                        <div class="results__shop-name">Чакона</div>
+                    </div>
+                    <div class="results__book-name">
+                        <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener">Фрэнк Г. Дюна: Дюна. Мессия Дюны. Дети Дюны. (Герберт, Фрэнк, 2020)</a>
+                    </div>
+                    <div class="results__price-block">
+                        <div class="results__price">820₽</div>
+                    </div>
+                </div>
+
+                <div class="row results__line">
+                    <a href="/redir/book?url=https%3A%2F%2Frusbuk.ru%2Foffer%2Fdiunas_32" target="_blank" rel="noopener" class="results__image">
+                        <img src="https://rusbuk.ru/uploads/books/936151/66b49319d2fc5b13397ec705221188a8b8c4254fMid.jpg?1" alt="Русбук" width="60" height="84" border="0">
+                    </a>
+                    <div class="results__shop">
+                        <div class="results__shop-name">Чакона</div>
+                        <div class="results__publishing">Новое издательство</div>
+                        <div class="results__isbn">ISBN: 9785171345679</div>
+                    </div>
+                    <div class="results__book-name">Фрэнк Г. Дюна: Дюна. Мессия Дюны. Дети Дюны. (Герберт, Фрэнк, 2020)</div>
+                    <div class="results__actions">
+                        <div onclick="show_snackbar('9ad4dcb0-1bd4-11ec-9b88-525400e1d4b1')" class="results__actions-link">Проверьте цену</div>
+                    </div>
+                    <div class="results__price-block">
+                        <div class="results__price">820₽</div>
+                        <div onclick="show_snackbar('831eea98-6d53-11ed-ab90-525400e1d4b1')" class="results__price results__price--action">
+                            650₽<br />
+                            <small>по акции</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--Results - end-->
+
+        <section id="hints" class="container article">
+            <div class="article__content">
+                <h4>Рекомендации:</h4>
+                <ol>
+                    <li>Попробуйте поискать книгу данного автора<br /> <a href="/search/d1?authors=&s5=1&s30=1&s38=1&s27=1&viewsize=15&startidx="><b>Автор:</b>&nbsp;<b>""</b></a></li>
+                    <li>Поиск проводился не во всех магазинах. Попробуйте повторить запрос, выбрав все магазины.<br /> <a href="/search/d1?title=&r=0&s=1s5=1&s30=1&s38=1s27=1&viewsize=15&startidx="><b>Название:</b>&nbsp;""</a></li>
+                    <li>Старайтесь наиболее точно указывать параметры книги в пределах наших рекомендаций (1-3 слова в названии, одна фамилия автора). Дело в том, что поисковые системы некоторых магазинов ищут только точное совпадение указанной вами подстроки в параметре книги, причём иногда учитываются даже знаки препинания и регистр букв. Таким образом, если вы ищете по началу названия книги, то лучше писать его с большой буквы. В фамилиях авторов первая буква нами автоматически переводится в верхний регистр. Что касается издательства, то лучше попробовать разные варианты его написания</li>
+                    <li>Советуем также ознакомиться с <a href="/search/d1?page=SearchHowTo">методикой</a> поиска книг</li>
+                </ol>
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer class="footer">
+            <div class="container row footer__row">
+                <div class="footer__copyright">@ 2000 — 2022, FINDBOOK.RU</div>
+                <div class="footer__text">
+                    <a href="/" class="footer__link">О проекте</a>
+                    <a href="/" class="footer__link">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/menu.js"></script>
+
+        <script src="js/toastnotify.js"></script>
+        <script>
+
+            function callbackGoTo(url) {
+                console.log('going to '+url);
+            }
+
+            function openInNewTab(url) {
+                window.open(url, '_blank').focus();
+            }
+
+            function callbackCopy(t) {
+                var dummy = document.createElement("textarea");
+                document.body.appendChild(dummy);
+                dummy.value = t;
+                dummy.select();
+                document.execCommand("copy");
+                document.body.removeChild(dummy);
+
+            }
+
+
+            function show_preorder(bookURL) {
+                Toastnotify.create({
+                    text: 'Предзаказ.<br> Дату начала продаж уточняйте на сайте магазина<br>Промокоды и акции не действуют',
+                    type: 'primary',
+                    important: true,
+                    buttonCancel: 'Перейти в магазин',
+                    callbackCancel: () => {
+                        window.open(bookURL, '_blank').focus();
+                    }
+                });
+
+            }
+
+
+            function show_snackbar(badgeId) {
+                // var xhttp = new XMLHttpRequest();
+                // xhttp.onreadystatechange = function() {
+                //     if (this.readyState == 4 && this.status == 200) {
+                //         j=JSON.parse(this.responseText);
+                //         if (j.type=='coupon') {
+                //                 Toastnotify.create({
+                //                     text: j.dsc,
+                //                     type: 'primary',
+
+                //                     important: true,
+                //                     buttonCancel: 'Копировать',
+                //                     callbackCancel: () => {
+                //                         callbackCopy(j.coupon);
+                //                     }
+                //                 });
+
+                //         }
+                //         if (j.type=='promotion') {
+                //             openInNewTab(j.url);
+                //         }
+
+
+                //     }
+                // };
+                // xhttp.open("GET", "/api/badge/"+badgeId, true);
+                // xhttp.send();
+
+                Toastnotify.create({
+                    text: 'Скидка -15% по промокоду \u003cb\u003eFINDBOOKADM\u003c/b\u003e\u003cbr\u003e',
+                    type: 'primary',
+
+                    important: true,
+                    buttonCancel: 'Копировать',
+                    callbackCancel: () => {
+                        callbackCopy('FINDBOOKADM');
+                    }
+                });
+
+            };
+
+
+        </script>
+    </body>
+</html>

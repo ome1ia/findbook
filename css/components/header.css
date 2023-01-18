@@ -1,0 +1,40 @@
+.header {
+    padding:  15px 0;
+    color:  var(--white);
+    margin-top:  0;
+    margin-bottom: 0;
+    background: var(--blue);
+}
+
+.header__title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.header__logo {
+    display: block;
+    width: 110px;
+    height: 45px;
+    margin-left:  -10px;
+    margin-bottom:  -15px;
+    overflow: hidden;
+    text-indent: -120%;
+    background: url("../../images/logo.png") 50% 50% no-repeat;
+    background-size: contain;
+}
+
+.header__text {
+    padding-left: 19px;
+    margin:  auto;
+    font-size: 10px;
+    line-height: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width:  768px) {
+    .header__text {
+        display: none;
+    }
+}

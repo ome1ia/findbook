@@ -1,0 +1,25 @@
+:root {
+    --background:         #f3f4f8;
+    --yellow:             #ffaf00;
+    --blue:               #243260;
+    --dark-blue:          #192340;
+    --light-blue:         #e3e3ef;
+    --gray:               #e3e3ef;
+    --gray-text:          #858ea0;
+    --light-gray-text:    #999;
+    --light-gray:         #e1e1ea;
+    --dark-gray:          #111;
+    --white:              #fff;
+    --black:              #000;
+    --placeholder:        #888;
+    --checkbox-button:    #f6f6ff;
+    --checkbox-shadow:    #e1e1ea;
+    --result-background:  #f8f8f8;
+    --green:              #12b870;
+}
+
+/**
+ * used breakpoints: 
+ * 768px
+ * 992px
+ */

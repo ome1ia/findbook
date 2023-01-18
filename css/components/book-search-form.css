@@ -1,0 +1,283 @@
+.book-search-form {
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+@media (max-width: 768px) {
+    .book-search-form__row {
+        flex-direction: column;
+    }
+}
+
+.book-search-form__expanded-button {
+    margin: 0 5px 5px 0;
+    width: 32px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: var(--gray);
+    color: var(--gray-text);
+    border-radius: 4px;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    font-size: 18px;
+}
+
+.book-search-form__expanded-button--active,
+.book-search-form__expanded-button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .book-search-form__expanded-button {
+        width: 100%;
+        height: 32px;
+    }
+}
+
+.book-search-form__field-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    flex-grow: 5;
+}
+
+.book-search-form__search-line {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 0 5px 0;
+}
+
+.book-search-form__fieldset {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-grow: 5;
+    border: 2px solid var(--dark-blue);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .book-search-form__fieldset {
+        flex-direction: column;
+    }
+}
+
+.book-search-form__fieldset:before,
+.book-search-form__fieldset:after {
+    display: block;
+    position: absolute;
+    left: 2px;
+    z-index: 5;
+    font-family: "findbook-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+    width: 1em;
+    font-size: 20px;
+    line-height: 1em;
+    color: var(--blue);
+}
+
+.book-search-form__fieldset:before {
+    top: 3px;
+    content: '\e805';
+}
+
+.book-search-form__fieldset:after {
+    top: 25px;
+    content: '\e80a';
+}
+
+.book-search-form__title,
+.book-search-form__author,
+.book-search-form__isbn {
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 33.3%;
+    padding-left: 12px;
+    background-color: var(--white);
+    font-size: 15px;
+    line-height: 45px;
+    font-weight: 500;
+    color: var(--black);
+}
+
+.book-search-form__title {
+    padding-left: 34px;
+}
+
+.book-search-form__author {
+    border-left: 2px solid var(--dark-blue);
+    border-right: 2px solid var(--dark-blue);
+}
+
+@media (max-width: 768px) {
+    .book-search-form__title,
+    .book-search-form__author,
+    .book-search-form__isbn {
+        width: 100%;
+        padding-left: 34px;
+    }
+
+    .book-search-form__author {
+        border-left: none;
+        border-top: 2px solid var(--dark-blue);
+        border-right: none;
+        border-bottom: 2px solid var(--dark-blue);
+    }
+}
+
+/* можно .book-search-form__fieldset::last-of-type .book-search-form__isbn но некошерно по БЭМ*/
+.book-search-form__isbn--last {
+    padding-right: 60px;
+}
+
+.book-search-form__isbn--extended {
+    padding-right: 90px;
+}
+
+@media (max-width: 768px) {
+    .book-search-form__isbn--last,
+    .book-search-form__isbn--extended {
+        padding-right: 0px;
+    }
+}
+
+
+.book-search-form__add-button,
+.book-search-form__remove-button {
+    margin: 0 0 0 4px;
+    width: 30px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: var(--gray);
+    color: var(--gray-text);
+    border-radius: 4px;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    font-size: 18px;
+}
+
+.book-search-form__add-button:hover,
+.book-search-form__remove-button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+
+.book-search-form__submit-button {
+    position: absolute;
+    bottom: 10.5px;
+    right: 39px;
+    height: 41px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+    line-height: 39px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: var(--yellow);
+    color: var(--dark-blue);
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.book-search-form__submit-button--icon {
+    width: 50px;
+    padding: 0;
+    font-family: "findbook-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+    display: inline-block;
+    text-decoration: inherit;
+    text-indent: -200%;
+    overflow: hidden;
+}
+
+.book-search-form__submit-button--icon:before {
+    content: '\e807';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-indent: 0;
+}
+
+@media (max-width: 768px) {
+    .book-search-form__submit-button {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        height: 32px;
+        line-height: 32px;
+        right: auto;
+        bottom: auto;
+    }
+}
+
+.book-search-form__extended-links {
+    display: none;
+    margin-top: 12px;
+    padding: 0 5px;
+}
+
+.book-search-form__extended-links--extended {
+    display: flex;
+}
+
+.book-search-form__link {
+    padding: 0;
+    border: none;
+    background: transparent;
+    text-decoration: none;
+    outline: none;
+    color: var(--gray-text);
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 500;
+    line-height: 1.2em;
+    cursor: pointer;
+}
+
+.book-search-form__link--dark {
+    color: var(--dark-gray);
+}
+
+.book-search-form__link--light {
+    color: var(--light-gray-text);
+}
+
+.book-search-form__link:hover {
+    text-decoration: underline;
+}
+
+/* extended block  */
+.book-search-form__extended-block {
+    margin-top: 18px;
+    padding: 0 12px 12px 12px;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+}

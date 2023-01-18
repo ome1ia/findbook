@@ -1,0 +1,32 @@
+.summary {
+    padding-top: 39px;
+}
+
+@media (max-width: 992px) {
+    .summary,
+    .summary__text-block {
+        flex-direction: column;
+    }
+
+    .summary__text {
+        margin-bottom: 10px;
+        margin-right: 0px;
+    }
+}
+
+.summary__text {
+    padding: 0 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    background: var(--white);
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--dark-gray);
+}
+
+.summary__mark {
+    font-weight: 600;
+    color: var(--blue);
+}

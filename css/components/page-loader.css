@@ -1,0 +1,22 @@
+.page-loader {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-color: var(--blue);
+}
+
+.page-loader:before {
+    content: '';
+    display: block;
+    width: 98px;
+    height: 30px;
+    margin: auto;
+    background: #fff url("../../images/logo-preloader.png") 50% 50% no-repeat;
+    background-size: contain;
+}

@@ -1,0 +1,32 @@
+.pagination {
+
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+    }
+
+    .pagination__page {
+        margin-bottom: 9px;
+    }
+}
+
+.pagination__page {
+    font-size: 10px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.pagination__page--dots {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--blue);
+    line-height: 25px;
+}
+
+.pagination__page--all {
+    padding-left: 14px;
+    padding-right: 14px;
+}
